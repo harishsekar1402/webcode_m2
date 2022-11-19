@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Outfit&family=Poppins&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+html,body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+h1{
+    text-align: center;
+}
+.nav{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    position: fixed !important;
+    width: 100%;
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.638);
+    height: 40px;
+    top:0%;
+    align-items: center;
+    /* background-color: rgb(42, 42, 42);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.479); */
+    z-index: 10;   
+    color: #fff;
+}
+.logo h1{
+    margin-left: 30px;
+    height: 60px;
+    background: transparent;
+    border-radius: 60px;
+    
+    margin-top: 3px;
+}
+
+.nav-links{
+    margin-left: 10%;
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    
+}
+.nav-links a{
+    color:rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    
+}
+
+.nav-links li::after{
+    content:'';
+    display: block;
+    background-color: rgb(255, 177, 9);
+    height: 2px;
+    transform: scaleX(0);
+    transition: transform 300ms;
+}
+
+.nav-links li:hover::after{
+    transform: scaleX(1);
+}
+.nav-links a:hover{
+    color:  rgb(135, 135, 135);
+}
+.menu{
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    align-items:center;
+    justify-content:center;
+    display: none;
+}
+
+.burger{
+    width: 35px;
+    height: 5px;
+    position: absolute;
+    top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.burger::before,.burger::after{
+    content:'';
+    position: absolute;
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 5px ;
+    box-shadow: 0 1px 3px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+}
+.burger::before{
+    transform: translateY(-16px);
+}
+.burger::after{
+    transform: translateY(16px);
+}
+/*animation*/
+.menu.open .burger{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+ }
+.menu.open .burger::before{
+    transform: rotate(45deg) translate(35px,-35px);
+}
+.menu.open .burger::after{
+    transform: rotate(-45deg) translate(35px,35px);
+}
+/*-----------------home----------------------*/
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+  }
+  
+  header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+  }
+  
+  .background {
+    transform: translateZ(-10px) scale(2);
+  }
+  
+  
+  .background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .title {
+    font-size: 7rem;
+    color: rgb(0, 0, 0);
+  }
+  
+  section {
+    font-size: 2rem;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+    min-height: 100vh;
+    width: auto;
+  }
+
+/*-----------------section-------------------*/
+
+
+#about{
+    background-color: rgb(255, 255, 255);
+    padding: 5%;
+}
+.bike{
+    background: red;
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+}
+.bike img{
+    height: 500px;
+    width: auto;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding: 3%;
+}
+.head{
+    color: rgb(5, 5, 5);
+
+}
+.head h1{
+    font-size: 40px;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    margin: 6%;
+}
+#v{
+    color: red;
+
+}
+#brands{
+    background-color: rgb(47, 47, 47);
+    display: flex;
+    flex-direction: row;
+    padding: 10%;
+}
+
+.con-img img{
+    height: 200px;
+    width: auto;
+}
+.cont{
+    font-size: 20px;
+}
+#brands h1{
+    text-align: center;
+}
+
+
+/*----------------------------media queries------------------------------------------*/
+
+@media only screen and (max-width:1000px) {
+    .nav{
+        position: sticky;
+    }
+    .title{
+        font-size: 50px;
+    }
+
+    .menu{
+        position: relative;
+        display: flex;
+        height: 50px;
+        top: 3px;
+        width: 50px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        align-items:center;
+        justify-content:center;
+        display: block;
+    }
+    .logo img{
+        height: 45px;
+    }
+    .nav-links{
+        position: fixed;
+        right: 0px;
+        top: 0vh;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.724);
+        height: 100vh;
+        width: 100%;
+        justify-content:space-evenly;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s;
+    }
+    .nav-links a{
+        color: white;
+    }
+    .display{
+        transform: translateX(0%);
+    }
+    #about .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .bike img{
+        height: 250px;
+        width: auto;
+    }
+    .bike {
+        height: 300px;
+        width: auto;
+    }
+    #brands{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .container-1{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .con-img{
+        background-color: rgb(191, 191, 191);
+    }
+}
+
+
+
+
+
+
+.con-img img{
+    height: 150px;
+}
+
+#bikes{
+    padding: 10%;
+}
+.container-1{
+    display: flex;
+    justify-content: space-evenly;
+}
+.card{
+    max-width: 300px;
+    background-color: rgba(0, 0, 0, 0.551);
+    color: white;
+    line-height: 1;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+.inner-card{
+    height: max-content;
+    width: 100%;
+}
+.inner-card img{
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+}
+.inner-card .content{
+    width: 100%;
+}
+button{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    width: 70px;
+    background-color: black;
+    color: white;
+
+}
+.inner-card{
+    padding: 6px;
+}
+
+.content p{
+    font-size: 20px;
+    line-height: 1.5;
+}
+#bikes h1{
+    text-align: center;
+}
+#foot{
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tv{
+    color: rgba(255, 0, 0, 0.713);
+}
