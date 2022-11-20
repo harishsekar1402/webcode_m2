@@ -364,6 +364,11 @@ button{
     justify-content: center;
     align-items: center;
 }
+#foot a{
+    color:#fff;
+    font-size:25px;
+    text-decoration: underline;  
+}
 #tv{
     color: rgba(255, 0, 0, 0.713);
 }
